@@ -1,0 +1,164 @@
+body {
+  background-color: #02aff1;
+}
+
+#center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -180px;
+  margin-left: -75px;
+  width: 150px;
+  height: 80px;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.skype-loader {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 70px;
+}
+
+.skype-loader .dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+
+  animation: 1.7s dotrotate cubic-bezier(0.775, 0.005, 0.310, 1.000) infinite;
+}
+
+.skype-loader .dot:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.skype-loader .dot:nth-child(2) {
+  animation-delay: 0.35s;
+}
+
+.skype-loader .dot:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+.skype-loader .dot:nth-child(4) {
+  animation-delay: 0.55s;
+}
+
+.skype-loader .dot:after, .skype-loader .dot .first {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  left: 50%;
+  margin-left: -4px;
+}
+
+.skype-loader .dot .first {
+  background: #fff;
+  margin-top: -4px;
+  animation: 1.7s dotscale cubic-bezier(0.775, 0.005, 0.310, 1.000) infinite;
+  animation-delay: 0.2s;
+}
+
+@keyframes dotrotate { 
+  from { transform: rotate(0deg); } 
+  to { transform: rotate(360deg); }
+}
+
+@keyframes dotscale { 
+  0%, 10% { width: 16px; height: 16px; margin-left: -8px;  margin-top: -4px; } 
+  50% { width: 8px; height: 8px; margin-left: -4px; margin-top: 0; }
+  90%, 100% { width: 16px; height: 16px;  margin-left: -8px;  margin-top: -4px; }
+}
+.box {
+  margin-top: 20px;
+  width: 80%;
+  max-width: 352px;
+  min-width: 280px;
+  padding: 44px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.sign-in-text {
+  color: #404040;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 16px;
+  font-family: "Segoe UI Web (West European)";
+}
+
+span {
+  font-family: "Segoe UI Web (West European)";
+  font-size: 13px;
+}
+
+.input-field {
+  font-size: 17px;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 1px;
+  width: 100%;
+  border-color: #666;
+  height: 36px;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: #1976d2;
+}
+
+a {
+  text-decoration: none;
+  color: #0067b8;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #666;
+}
+
+.btn-div {
+  text-align: right;
+}
+
+.btn {
+  min-width: 100px;
+  padding: 10px 16px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background-color: #0067b8;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #1976d2;
+}
+
+@media only screen and (max-width: 600px) {
+  .bg {
+    justify-content: start;
+    padding-top: 20px;
+  }
+
+  .box {
+    padding: 24px;
+  }
+}
+
+
+
