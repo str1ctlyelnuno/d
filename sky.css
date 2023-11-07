@@ -1,82 +1,86 @@
-.login {
-  width: 400px;
-  margin: 16px auto;
+
+body {
+  background-color: #02aff1;
+}
+
+#center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -180px;
+  margin-left: -75px;
+  width: 150px;
+  height: 80px;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
   font-size: 16px;
-}
-
-/* Reset top and bottom margins from certain elements */
-.login-header,
-.login p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-/* The triangle form is achieved by a CSS hack */
-.login-triangle {
-  width: 0;
-  margin-right: auto;
-  margin-left: auto;
-  border: 12px solid transparent;
-  border-bottom-color: #28d;
-}
-
-.login-header {
-  background: #28d;
-  padding: 20px;
-  font-size: 1.4em;
-  font-weight: normal;
+  color: #fff;
   text-align: center;
-  text-transform: uppercase;
-  color: #fff;
+  -webkit-font-smoothing: antialiased;
 }
 
-.login-container {
-  background: #ebebeb;
-  padding: 12px;
+.skype-loader {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 70px;
 }
 
-/* Every row inside .login-container is defined with p tags */
-.login p {
-  padding: 12px;
+.skype-loader .dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+
+  animation: 1.7s dotrotate cubic-bezier(0.775, 0.005, 0.310, 1.000) infinite;
 }
 
-.login input {
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  border-width: 1px;
-  border-style: solid;
-  padding: 16px;
-  outline: 0;
-  font-family: inherit;
-  font-size: 0.95em;
+.skype-loader .dot:nth-child(1) {
+  animation-delay: 0.2s;
 }
 
-.login input[type="email"],
-.login input[type="password"] {
+.skype-loader .dot:nth-child(2) {
+  animation-delay: 0.35s;
+}
+
+.skype-loader .dot:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+.skype-loader .dot:nth-child(4) {
+  animation-delay: 0.55s;
+}
+
+.skype-loader .dot:after, .skype-loader .dot .first {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  left: 50%;
+  margin-left: -4px;
+}
+
+.skype-loader .dot .first {
   background: #fff;
-  border-color: #bbb;
-  color: #555;
+  margin-top: -4px;
+  animation: 1.7s dotscale cubic-bezier(0.775, 0.005, 0.310, 1.000) infinite;
+  animation-delay: 0.2s;
 }
 
-/* Text fields' focus effect */
-.login input[type="email"]:focus,
-.login input[type="password"]:focus {
-  border-color: #888;
+@keyframes dotrotate { 
+  from { transform: rotate(0deg); } 
+  to { transform: rotate(360deg); }
 }
 
-.login input[type="submit"] {
-  background: #28d;
-  border-color: transparent;
-  color: #fff;
-  cursor: pointer;
+@keyframes dotscale { 
+  0%, 10% { width: 16px; height: 16px; margin-left: -8px;  margin-top: -4px; } 
+  50% { width: 8px; height: 8px; margin-left: -4px; margin-top: 0; }
+  90%, 100% { width: 16px; height: 16px;  margin-left: -8px;  margin-top: -4px; }
 }
 
-.login input[type="submit"]:hover {
-  background: #17c;
-}
 
-/* Buttons' focus effect */
-.login input[type="submit"]:focus {
-  border-color: #05a;
-}
