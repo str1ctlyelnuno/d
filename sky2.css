@@ -1,0 +1,147 @@
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),
+    local("Roboto-Light"), local("DroidSans"), local("Tahoma"),
+    local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light");
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Modal Content */
+.modal-content {
+  margin: auto;
+  padding: 13px;
+  width: 480px;
+  height: 400px;
+  color: transparent;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#title-bar {
+  height: 38px;
+  background-color: #d6dae0;
+  width: 480px;
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+  margin-left: -14px;
+  margin-top: -14px;
+
+}
+
+#logo {
+  padding-left: 5px;
+  vertical-align: middle;
+}
+
+#logo-description {
+  color: black;
+  font-size: 14px;
+  font-family: "system";
+  vertical-align: middle;
+}
+
+#minimize {
+  color: black;
+  font-size: 12px;
+  padding: 9px 15px 7px 15px;
+}
+
+.title-bar:hover .minimize {
+   background-color: red;
+}
+
+#square {
+  color: black;
+  font-size: 22px;
+  padding: 0px 15px 5px 15px;
+}
+
+#exit {
+  color: black;
+  font-size: 15px;
+  padding: 7px 17px 7px 17px;
+}
+
+#url-bar {
+  height: 28px;
+  background-color: #f1f3f4;
+  width: 480px;
+  margin-left: -14px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#url-bar::-webkit-scrollbar {
+  display: none;
+}
+
+
+#ssl-padlock {
+  user-select: none;
+  padding-left: 8px;
+  margin-right: 8px;
+}
+
+#domain-name {
+  color: #000000;
+  font-size: 14px;
+  font-family: "system";
+}
+
+#domain-path {
+  color: #7c7c7c;
+  font-size: 14px;
+  font-family: "system";
+}
+
+#title-bar-width {
+  width: 100%;
+}
+
+#content {
+  width: 480px;
+  height: 400px;
+  margin-left: -14px;
+  background-color: white;
+}

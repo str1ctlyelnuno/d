@@ -1,0 +1,636 @@
+
+/** CSS *************************
+ * Reset
+ ************************************/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,
+pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,
+strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,
+legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,
+canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,
+section,summary,time,mark,audio,video {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     outline: 0;
+     font-size: 100%;
+     vertical-align: baseline;
+     background: transparent
+ }
+
+a {
+     margin: 0;
+     padding: 0;
+     font-size: 100%;
+     vertical-align: baseline;
+     background: transparent
+ }
+ins {
+     background-color: #ff9;
+     color: #000;
+     text-decoration: none
+ }
+mark {
+     background-color: #ff9;
+     color: #000;
+     font-style: italic;
+     font-weight: bold
+ }
+del {
+     text-decoration: line-through
+ }
+abbr[title], dfn[title] {
+     border-bottom: 1px dotted;
+     cursor: help
+ }
+table {
+     border-collapse: collapse;
+     border-spacing: 0
+ }
+hr {
+     display: block;
+     height: 1px;
+     border: 0;
+     border-top: 1px solid #ccc;
+     margin: 1em 0;
+     padding: 0
+ }
+input, select {
+     vertical-align: middle
+ }
+* {box-sizing: border-box;}
+
+/** TEMPLATE *************************
+ * Base Settings
+ ************************************/
+body,html {
+  font-family: "Segoe UI",arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.25);
+}
+::-webkit-scrollbar-thumb {
+  background: #00537D;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #006CA2;
+}
+
+.container{
+  position:fixed;
+  width:100%;
+  height:100vh;
+  background-color: #FFFFFF;
+}
+
+/** SIDEBAR **************************
+ * Base Settings
+ ************************************/
+#sidebar {
+  position:relative;
+  float: left;
+  width: 190px;
+  padding: 10px;
+  /*! background-color: #212121; */
+  box-sizing: border-box;
+  box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.25);
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+  position: fixed;
+  top: 51px;
+  z-index:1;
+}
+
+/** SIDEBAR **************************
+ * Items
+ ************************************/
+#sidebar .title {
+  font-size:11px;
+  font-weight:600;
+  margin-bottom:8px;
+  margin-top:24px;
+  color:#006CA2;
+  letter-spacing: 0.75px;
+}
+#sidebar .title_top {
+  font-size:11px;
+  font-weight:600;
+  margin-bottom:8px;
+  margin-top:0px;
+  color:#006CA2;
+  letter-spacing: 0.75px;
+}
+#sidebar ul {
+    list-style: none;
+}
+#sidebar li {
+  margin-bottom: 3px;
+  padding-top:3px;
+  padding-left:6px;
+  padding-bottom:4px;
+  font-size:14px;
+  cursor:pointer;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#sidebar li i{
+  margin-right: 10px;
+  color: #456;
+  width:16px;
+  height:auto;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#sidebar li a {
+  color: #456;
+  text-decoration: none;
+  -moz-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#sidebar li.active {
+  font-weight: 600;
+  background-color: #006CA2;
+  border-radius:5px;
+  -moz-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#sidebar li.active:hover i, #sidebar li.active:hover a,#sidebar li.active i,#sidebar li.active a{
+  font-weight: 600;
+  color:#fff;
+  background-color: #006CA2;
+  border-radius:5px;
+  -moz-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#sidebar li:hover i,#sidebar li:hover a {
+  color:#006CA2;
+}
+
+/** TOOLBAR **************************
+ * Base Settings
+ ************************************/
+.toolbar{
+  position:relative;
+  top:0;
+  left:0;
+  height:51px;
+  width:100%;
+  border-bottom: 1px solid #006CA2;
+  background-color:#006CA2;
+  z-index:1;
+}
+
+/** TOOLBAR **************************
+ * Bars
+ ************************************/
+.bar-main, .bar-viewstyle {
+  position:relative;
+  float:left;
+  padding:0px;
+  padding-right:10px;
+  margin-right:10px;
+  border-right: 1px solid #006CA2;
+}
+.bar-viewstyle {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px;
+}
+
+/** TOOLBAR **************************
+ * Buttons
+ ************************************/
+.standard-btn {
+  border:0;
+  background-color:#006CA2;
+  border-bottom: 2px solid #006CA2;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px 5px;
+  margin-left: 10px;
+  outline: none;
+}
+.view-btn {
+  background-color:#006CA2;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px 10px;
+  margin-left: 2px;
+  outline: none;
+}
+.view-btn.active {
+  color: #006CA2;
+  border-bottom: 2px solid #006CA2;
+}
+.icons-view {
+  display: flex;
+  flex-wrap: wrap;
+}
+.icons-view li {
+  width: 150px;
+  margin: 25px;
+  text-align: center;
+}
+
+/** FILES ****************************
+ * Base Settings
+ ************************************/
+.main-content {
+  position:relative;
+  float:left;
+  top:51px;
+  margin-left: 190px;
+  width:calc(100% - 190px);
+  padding: 0px;
+  box-sizing: border-box;
+  flex: 1;
+  padding: 0px;
+}
+.main-content .files {
+  position:relative;
+  padding-left:20px;
+  padding:0px;
+  width:100%;
+  height:90.5vh;
+  
+}
+.main-content .files #files-list {
+  position:relative;
+  height:100%;
+  padding:15px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: flex-start;
+  align-content: baseline;
+  overflow-y:scroll;
+  background-color: #fff;
+}
+
+/** HEADER ***************************
+ * Breadcrumb - location
+ ************************************/
+.header {
+  position:relative;
+  widht: 100%;
+  /*! background-color: #242424; */
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid #444;
+  height: 35px;
+  overflow:hidden;
+  padding: 10px 10px;
+  display: flex;
+  flex-wrap: no-wrap;
+}
+.header span > p {
+  position:relative;
+  top:0px;
+  padding:8px 0px 0px 8px;
+  font-size:13px;
+  color:rgba(0,0,0,0.7);
+    
+}
+.header span {
+  position:relative;
+  padding-right:5px;
+  margin-left:10px;
+  top:-10px;
+  /*! background-color:#242424; */
+  color:rgba(0,0,0,0.7);
+  outline: none;
+  text-decoration: none;
+  transition: background 0.2s linear;
+  height:34px;
+    width:fit-content;
+}
+.header span:after,
+.header span:before {
+  /*! background: #242424; */
+  bottom: 0;
+  clip-path: polygon(50% 50%, -50% -50%, 0 100%);
+  content: "";
+  left: 100%;
+  position: absolute;
+  top: 0px;
+  transition: background 0.2s linear;
+  width: 1em;
+  z-index: 1;
+}
+.header span:before {
+  /*! background: #444; */
+  margin-left: 1px;
+}
+.header span:last-child {
+  border-right: none;
+}
+.header span.active {
+  height:34px;
+    margin-top:-0.15px;
+}
+.header span.active p {
+  font-weight:600;
+  color:#006CA2;
+}
+.header i {
+    color: #006CA2;
+}
+
+/** FILES ****************************
+ * Files Settings
+ ************************************/
+.file_item {
+  position:relative;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  align-content: baseline;
+  transition: background-color 0.3s ease;
+  width:80px;
+  height:auto;
+  margin-right:8px;
+  padding:4px 42px;
+  margin-bottom:16px;
+  border: 1px solid transparent;
+  -webkit-user-select: contain;  
+  -moz-user-select: contain;    
+  -ms-user-select: contain;      
+  user-select: contain;
+  overflow:hidden;
+}
+.file_item .file_icon {
+  display: inline-block;
+  position:relative;
+  height: 64px;
+  width: 64px;
+}
+.file_item .file_name {
+  position:relative;
+  top:0px;
+  font-size: 14px;
+  text-align:center;
+  white-space:no-wrap;
+  word-break:keep-all;
+  width:90px;
+  max-width:90px;
+  max-height:36px;
+  color:#000;
+  text-decoration:none;
+  margin:0;padding:0;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+.file_item .file_size {
+  font-size: 12px;
+}
+.file_item .file_type {
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.file_item:select {
+  background-color: #e1f2ff;
+}
+.file_item:hover {
+  background-color: rgba(0,0,0,0.15);
+    border: 1px dotted rgba(0,0,0,0.75);
+  cursor: pointer;
+}
+.file_item.active {
+  background-color: #e1f2ff;
+}
+
+/** FILES ****************************
+ * View Settings
+ ************************************/
+
+/* Mega Icons */
+.mega-icons li {
+  display: inline-block;
+  width: 25%;
+  padding: 20px;
+  text-align: center;
+}
+.mega-icons li img {
+  width: 64px;
+  height: 64px;
+}
+
+/* Big Icons */
+.big-icons li {
+  display: inline-block;
+  width: 33.33%;
+  padding: 20px;
+  text-align: center;
+}
+.big-icons li img {
+  width: 48px;
+  height: 48px;
+}
+
+/* Normal Icons */
+.normal-icons li {
+  display: inline-block;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+.normal-icons li i {
+  width: 32px;
+  height: 32px;
+}
+
+/* Details */
+.details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.details th,.details td {
+  padding: 10px;
+  text-align: left;
+}
+.details th {
+  border-bottom: 2px solid #ddd;
+}
+.details tr:hover {
+  background-color: #f5f5f5;
+}
+.table-view {
+  display: none;
+  margin-top: 20px;
+}
+.icons-view li {
+  width: 100px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table th,table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+table th {
+  font-weight: bold;
+  background-color: #f5f5f5;
+}
+.table-view a {
+  display: flex;
+  align-items: center;
+    width:100%;
+}
+.table-view .file_icon {
+  width: 60px;
+  height: 20px;
+}
+.table-view .file_item i {
+  width: 100%;
+  height: 100%;
+}
+
+/** TOOLS ****************************
+ * Modal
+ ************************************/
+
+/** TOOLS ****************************
+ * Create Folder
+ ************************************/
+#new-folder-form {
+  display: flex;
+  flex-direction: row;
+}
+#new-folder-name {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right:10px;
+    outline: none;
+  width:270px;
+}
+#create-folder-btn {
+    background-color: #005A87;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+}
+#create-folder-btn:hover {
+    background-color: #006CA2;
+}
+
+/** TOOLS ****************************
+ * File Uploader
+ ************************************/
+#file_upload_button {
+  background-color: #1a73e8;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+}
+#file_upload_input {
+  display: none;
+}
+#file_upload_label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+#file_upload_label:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+#file_upload_label.selected {
+  background-color: #e1f2ff;
+  border: 1px solid #1a73e8;
+  color: #1a73e8;
+}
+
+/* File Input */
+#file-input-container {
+  display: none;
+}
+#file-input-label {
+  background-color: #3e3e3e;
+  color: #fff;
+  padding: 5px 10px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+#file-input-label:hover {
+  background-color: #555;
+}
+#file-input {
+  display: none;
+}
+
+/** TOOLS ****************************
+ * Tooltips
+ ************************************/
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
