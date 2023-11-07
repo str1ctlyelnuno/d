@@ -1,78 +1,51 @@
-.box {
-  margin-top: 20px;
-  width: 80%;
-  max-width: 352px;
-  min-width: 280px;
-  padding: 44px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  background-color: white;
+
+.login-container {
+  background: #ebebeb;
+  padding: 12px;
 }
 
-.sign-in-text {
-  color: #404040;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-top: 16px;
-  font-family: "Segoe UI Web (West European)";
+/* Every row inside .login-container is defined with p tags */
+.login p {
+  padding: 12px;
 }
 
-span {
-  font-family: "Segoe UI Web (West European)";
-  font-size: 13px;
-}
-
-.input-field {
-  font-size: 17px;
-  border-top-width: 0;
-  border-left-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 1px;
+.login input {
+  box-sizing: border-box;
+  display: block;
   width: 100%;
-  border-color: #666;
-  height: 36px;
-  outline: none;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
 }
 
-.input-field:focus {
-  border-color: #1976d2;
+.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
 }
 
-a {
-  text-decoration: none;
-  color: #0067b8;
+/* Text fields' focus effect */
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
 }
 
-a:hover {
-  text-decoration: underline;
-  color: #666;
-}
-
-.btn-div {
-  text-align: right;
-}
-
-.btn {
-  min-width: 100px;
-  padding: 10px 16px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  background-color: #0067b8;
+.login input[type="submit"] {
+  background: #28d;
+  border-color: transparent;
   color: #fff;
-  border: none;
-  font-size: 16px;
+  cursor: pointer;
 }
 
-.btn:hover {
-  background-color: #1976d2;
+.login input[type="submit"]:hover {
+  background: #17c;
 }
 
-@media only screen and (max-width: 600px) {
-  .bg {
-    justify-content: start;
-    padding-top: 20px;
-  }
-
-  .box {
-    padding: 24px;
-  }
+/* Buttons' focus effect */
+.login input[type="submit"]:focus {
+  border-color: #05a;
 }
